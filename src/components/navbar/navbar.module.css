@@ -21,6 +21,7 @@
 .links {
   display: flex;
   gap: 20px;
+  align-items: center;
   flex: 1;
   font-size: 20px;
 }
