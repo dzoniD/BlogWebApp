@@ -15,14 +15,13 @@ export const ThemeContextProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
     return getFromLocalStorage();
   });
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   const toggle = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
-
-  useEffect(() => {
-    localStorage.setItem("theme", theme);
-  }, [theme]);
 
   return (
     <ThemeContext.Provider value={{ theme, toggle }}>
