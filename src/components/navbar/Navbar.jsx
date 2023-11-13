@@ -17,7 +17,7 @@ const Navbar = () => {
       <div className={styles.logo}>Nidza Blog</div>
       <div className={styles.links}>
         <ThemeToggle />
-        <Link className={styles.link} href={"/homepage"}>
+        <Link className={styles.link} href={"/"}>
           Homepage
         </Link>
         <Link className={styles.link} href={"/contact"}>
