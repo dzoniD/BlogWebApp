@@ -3,22 +3,12 @@ import styles from "./singlePage.module.css";
 import Menu from "@/components/menu/Menu";
 import Image from "next/image";
 import Comments from "@/components/comments/Comments";
-
-const getData = async (slug) => {
-  const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
-    cache: "no-cache",
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed");
-  }
-  return res.json();
-};
+import { getData } from "@/utils/fetchHelper";
 
 export const SinglePage = async ({ params }) => {
   const { slug } = params;
 
-  const data = await getData(slug);
+  const data = await getData(`http://localhost:3000/api/posts/${slug}`);
 
   return (
     <div className={styles.container}>
