@@ -9,7 +9,7 @@ const Footer = () => {
       <div className={styles.info}>
         <div className={styles.logo}>
           <Image src="/logo.png" alt="logo" width={50} height={50} />
-          <h1 className={styles.logoText}>Dzonis blog</h1>
+          <h1 className={styles.logoText}>Nidza blog</h1>
         </div>
         <p className={styles.desc}>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet
@@ -34,10 +34,10 @@ const Footer = () => {
         </div>
         <div className={styles.list}>
           <span className={styles.listTitle}>Tags</span>
-          <Link href={"/"}>Style</Link>
-          <Link href={"/"}>Fashion</Link>
-          <Link href={"/"}>Coding</Link>
-          <Link href={"/"}>Travel</Link>
+          <Link href={"/blog?cat=style"}>Style</Link>
+          <Link href={"/blog?cat=fashion"}>Fashion</Link>
+          <Link href={"/blog?cat=coding"}>Coding</Link>
+          <Link href={"/blog?cat=travel"}>Travel</Link>
         </div>
         <div className={styles.list}>
           <span className={styles.listTitle}>Social</span>
