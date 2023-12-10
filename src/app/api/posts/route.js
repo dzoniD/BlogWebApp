@@ -7,15 +7,18 @@ export const GET = async (req) => {
 
   const page = searchParams.get("page");
   const cat = searchParams.get("cat");
+  const popular = searchParams.get("popular");
 
-  const POST_PER_PAGE = 2;
+  const POST_PER_PAGE = page ? 2 : 4;
 
   const query = {
     take: POST_PER_PAGE,
-    skip: POST_PER_PAGE * (page - 1),
+    ...(page && { skip: POST_PER_PAGE * (page - 1) }),
     where: {
       ...(cat && { catSlug: cat }),
     },
+    orderBy: { ...(popular && { views: "desc" }) },
+    include: { user: true },
   };
 
   try {

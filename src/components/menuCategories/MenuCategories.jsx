@@ -11,6 +11,7 @@ export const MenuCategories = async () => {
         if (item.title) {
           return (
             <Link
+              key={item.id}
               href={`/blog?cat=${item.slug}`}
               className={`${styles.categoryItem} ${styles[item.slug]}`}
             >
